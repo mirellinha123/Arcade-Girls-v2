@@ -1,0 +1,766 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rajdhani:wght@500;600;700&display=swap');
+
+:root {
+    --bg-principal: #07070a;
+    --bg-secundario: #0f0f19;
+    --rosa-neon: #ff69b4;
+    --ciano-neon: #00f0ff;
+    --branco: #ffffff;
+    --cinza: #777777;
+}
+
+/* =========================
+   CONFIGURAÇÃO GERAL
+   ========================= */
+
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 85px !important;
+
+    background-color: var(--bg-principal) !important;
+    color: var(--branco) !important;
+    font-family: 'Rajdhani', sans-serif !important;
+
+    background-image:
+        linear-gradient(
+            rgba(18, 16, 16, 0) 50%,
+            rgba(0, 0, 0, 0.25) 50%
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255, 105, 180, 0.05),
+            rgba(0, 240, 255, 0.04),
+            rgba(255, 105, 180, 0.05)
+        );
+
+    background-size: 100% 4px, 6px 100%;
+}
+
+main,
+main.container {
+    flex: 1;
+    padding-top: 24px;
+    padding-bottom: 60px;
+}
+
+/* =========================
+   NAVBAR
+   ========================= */
+
+.navbar {
+    min-height: 78px;
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+    background-color: var(--bg-principal) !important;
+    border-bottom: 3px solid var(--rosa-neon);
+    box-shadow: 0 4px 18px rgba(255, 105, 180, 0.5);
+}
+
+/* Navbar ocupando toda a largura */
+.navbar.container {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    border-radius: 0 !important;
+}
+
+.navbar .container-fluid {
+    width: 100%;
+    padding-left: 25px;
+    padding-right: 45px;
+}
+
+.navbar-brand {
+    margin-right: auto !important;
+    color: var(--rosa-neon) !important;
+    font-family: 'Press Start 2P', cursive !important;
+    font-size: 1.2rem;
+    text-shadow:
+        0 0 8px rgba(255, 105, 180, 0.8),
+        0 0 18px rgba(255, 105, 180, 0.5);
+    transition: 0.3s;
+}
+
+.navbar-brand:hover {
+    color: var(--ciano-neon) !important;
+    text-shadow: 0 0 12px var(--ciano-neon);
+}
+
+.navbar .navbar-nav,
+.navbar .navbar-nav.me-auto {
+    margin-left: auto !important;
+    margin-right: 0 !important;
+}
+
+.navbar .nav-link {
+    color: var(--branco) !important;
+    font-family: 'Press Start 2P', cursive !important;
+    font-size: 0.75rem;
+    transition: 0.3s;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+    color: var(--ciano-neon) !important;
+    text-shadow: 0 0 10px var(--ciano-neon);
+}
+
+.navbar-toggler {
+    border: 1px solid var(--ciano-neon) !important;
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 8px var(--ciano-neon) !important;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%2300f0ff' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    background-color: var(--bg-secundario) !important;
+    border: 2px solid var(--ciano-neon) !important;
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
+}
+
+.dropdown-item {
+    color: var(--branco) !important;
+    font-family: 'Rajdhani', sans-serif !important;
+    font-size: 0.9rem;
+    padding: 10px 20px !important;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+    background-color: rgba(0, 240, 255, 0.2) !important;
+    color: var(--ciano-neon) !important;
+}
+
+/* =========================
+   TÍTULOS
+   ========================= */
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    color: var(--rosa-neon) !important;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Press Start 2P', cursive !important;
+    text-shadow: 0 0 10px rgba(255, 105, 180, 0.75);
+}
+
+h1,
+h2 {
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 1.15rem;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 0.9rem;
+}
+
+/* =========================
+   ARCADE CARDS
+   ========================= */
+
+.arcade-card {
+    background: var(--bg-secundario);
+    border: 3px solid var(--ciano-neon);
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.5), inset 0 0 10px rgba(0, 240, 255, 0.3);
+    border-radius: 0px;
+    padding: 25px;
+}
+
+.arcade-card-red {
+    border-color: var(--rosa-neon);
+    box-shadow: 0 0 15px rgba(255, 105, 180, 0.5), inset 0 0 10px rgba(255, 105, 180, 0.3);
+}
+
+/* =========================
+   DASHBOARD
+   ========================= */
+
+.dashboard-card {
+    min-height: 200px;
+    padding: 30px 20px;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-5px);
+    text-decoration: none;
+}
+
+.dashboard-card:nth-child(2) {
+    background-color: var(--ciano-neon);
+    border-color: var(--ciano-neon);
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
+}
+
+.dashboard-card:nth-child(2):hover {
+    background-color: var(--ciano-neon);
+    box-shadow: 0 0 25px var(--ciano-neon);
+}
+
+.dashboard-icon {
+    color: var(--branco);
+    font-size: 5rem;
+    line-height: 1;
+    margin-bottom: 15px;
+}
+
+.dashboard-card:nth-child(2) .dashboard-icon {
+    color: var(--bg-principal);
+}
+
+.dashboard-title {
+    margin: 0;
+    color: var(--branco);
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.dashboard-card:nth-child(2) .dashboard-title {
+    color: var(--bg-principal);
+}
+
+/* =========================
+   FORMULÁRIOS
+   ========================= */
+
+form {
+    background-color: var(--bg-secundario);
+    border: 2px solid var(--ciano-neon);
+    padding: 25px;
+    margin-bottom: 60px;
+    box-shadow:
+        0 0 15px rgba(0, 240, 255, 0.35),
+        inset 0 0 10px rgba(0, 240, 255, 0.15);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: inline-block;
+    color: var(--ciano-neon);
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.form-control,
+.form-select {
+    color: var(--branco) !important;
+    background-color: #000 !important;
+    border: 2px solid var(--ciano-neon) !important;
+    border-radius: 0 !important;
+    font-family: 'Rajdhani', sans-serif !important;
+}
+
+.form-control::placeholder {
+    color: var(--cinza) !important;
+}
+
+.form-control:focus,
+.form-select:focus {
+    color: var(--branco) !important;
+    background-color: #050505 !important;
+    border-color: var(--rosa-neon) !important;
+    box-shadow: 0 0 10px rgba(255, 105, 180, 0.7) !important;
+}
+
+input[type="date"] {
+    color-scheme: dark;
+}
+
+/* Formulário da barra de pesquisa */
+.form-pesquisa {
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+/* =========================
+   TABELAS
+   ========================= */
+
+.table {
+    color: var(--branco) !important;
+    background-color: var(--bg-secundario) !important;
+    border-color: rgba(0, 240, 255, 0.25) !important;
+}
+
+.table thead th {
+    color: var(--rosa-neon) !important;
+    background-color: var(--bg-secundario) !important;
+    border-bottom: 3px solid var(--rosa-neon) !important;
+    font-family: 'Press Start 2P', cursive !important;
+    font-size: 0.62rem;
+    text-transform: uppercase;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.table thead th:last-child {
+    padding-right: 260px !important;
+}
+
+.table tbody td {
+    color: var(--branco) !important;
+    background-color: transparent !important;
+    border-bottom: 1px solid rgba(0, 240, 255, 0.2) !important;
+    vertical-align: middle;
+}
+
+.table-hover tbody tr:hover td {
+    color: var(--branco) !important;
+    background-color: rgba(0, 240, 255, 0.08) !important;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+/* Coluna de ações */
+.table th:last-child,
+.table td:last-child {
+    width: auto;
+    text-align: right;
+    padding-right: 10px !important;
+}
+
+.actions {
+    white-space: nowrap;
+}
+
+.actions-wrap {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.actions-wrap .btn {
+    margin: 0;
+    padding: 10px 16px !important;
+    font-size: 0.75rem !important;
+    min-height: 48px;
+}
+
+.btn-sm {
+    padding: 10px 16px !important;
+    font-size: 0.75rem !important;
+    min-height: 48px;
+}
+
+
+/* Tornar a linha clicável */
+tbody tr {
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+tbody tr:hover {
+    background-color: #0f0f19 !important;
+}
+
+/* Impedir que cliques nos botões de ação acionem a linha */
+tbody tr .actions-vertical,
+tbody tr .actions-vertical button,
+tbody tr .actions-vertical a {
+    pointer-events: auto;
+}
+
+
+
+/* =========================
+   BOTÕES
+   ========================= */
+
+.btn {
+    border-radius: 0 !important;
+    font-family: 'Rajdhani', sans-serif !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+/* Botões rosas */
+.btn-secondary,
+.btn-dark,
+.btn-arcade {
+    color: var(--branco) !important;
+    background-color: transparent !important;
+    border: 2px solid var(--rosa-neon) !important;
+    box-shadow: 0 0 8px rgba(255, 105, 180, 0.5);
+}
+
+.btn-secondary:hover,
+.btn-dark:hover,
+.btn-arcade:hover {
+    color: var(--branco) !important;
+    background-color: var(--rosa-neon) !important;
+    border-color: var(--rosa-neon) !important;
+    box-shadow: 0 0 20px rgba(255, 105, 180, 0.9);
+}
+
+/* Botões ciano */
+.btn-light,
+.btn-arcade-green {
+    border: 2px solid var(--ciano-neon) !important;
+    box-shadow: 0 0 8px rgba(0, 240, 255, 0.5);
+}
+
+.btn-light {
+    color: var(--bg-principal) !important;
+    background-color: var(--ciano-neon) !important;
+}
+
+.btn-arcade-green {
+    color: var(--branco) !important;
+    background-color: transparent !important;
+}
+
+.btn-light:hover,
+.btn-arcade-green:hover {
+    color: var(--bg-principal) !important;
+    background-color: var(--ciano-neon) !important;
+    border-color: var(--ciano-neon) !important;
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.9);
+}
+
+.btn-arcade,
+.btn-arcade-green {
+    font-family: 'Press Start 2P', cursive !important;
+    font-size: 0.65rem !important;
+}
+
+/* Botões próximos ao título */
+.botoes-jogos .btn,
+.botoes-clientes .btn {
+    margin-left: 5px;
+}
+
+/* =========================
+   VISUALIZAÇÃO DO CLIENTE/JOGO
+   ========================= */
+
+.dl-horizontal {
+    background-color: var(--bg-secundario);
+    border-left: 3px solid var(--rosa-neon);
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 12px rgba(255, 105, 180, 0.3);
+}
+
+.dl-horizontal dt {
+    color: var(--ciano-neon);
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+.dl-horizontal dd {
+    color: var(--branco);
+    margin-left: 0;
+    margin-bottom: 10px;
+}
+
+/* =========================
+   ALERTAS
+   ========================= */
+
+.alert {
+    color: var(--branco) !important;
+    background-color: var(--bg-secundario) !important;
+    border: 3px solid var(--rosa-neon) !important;
+    border-radius: 0 !important;
+    box-shadow: 0 0 15px rgba(255, 105, 180, 0.5);
+    font-family: 'Rajdhani', sans-serif !important;
+}
+
+.alert-success,
+.alert-info {
+    border-color: var(--ciano-neon) !important;
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
+}
+
+.alert h4 {
+    color: var(--ciano-neon) !important;
+    font-family: 'Press Start 2P', cursive !important;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.alert p {
+    color: var(--branco) !important;
+    font-size: 1rem;
+}
+
+.btn-close {
+    filter: brightness(0) invert(1) !important;
+}
+
+/* =========================
+   MODAL
+   ========================= */
+
+/* Fundo do modal */
+.modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Conteúdo principal do modal */
+.modal-content {
+    color: var(--branco) !important;
+    background-color: var(--bg-secundario) !important;
+    border: 3px solid var(--rosa-neon) !important;
+    border-radius: 0 !important;
+    box-shadow:
+        0 0 20px rgba(255, 105, 180, 0.7),
+        0 0 40px rgba(255, 105, 180, 0.4);
+}
+
+/* Cabeçalho do modal */
+.modal-header {
+    background-color: var(--bg-secundario) !important;
+    border-bottom: 2px solid var(--rosa-neon) !important;
+    padding: 20px 25px !important;
+}
+
+/* Título do modal */
+.modal-title {
+    color: var(--rosa-neon) !important;
+    font-family: 'Press Start 2P', cursive !important;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(255, 105, 180, 0.75);
+}
+
+/* Botão de fechar do modal */
+.modal-header .btn-close {
+    filter: brightness(0) invert(1) !important;
+}
+
+.modal-header .btn-close:focus {
+    box-shadow: 0 0 8px rgba(255, 105, 180, 0.7) !important;
+}
+
+/* Corpo do modal */
+.modal-body {
+    color: var(--branco) !important;
+    background-color: var(--bg-secundario) !important;
+    padding: 25px !important;
+    font-family: 'Rajdhani', sans-serif !important;
+}
+
+.modal-body p {
+    margin-bottom: 15px;
+}
+
+/* Rodapé do modal */
+.modal-footer {
+    background-color: var(--bg-secundario) !important;
+    border-top: 2px solid var(--ciano-neon) !important;
+    padding: 20px 25px !important;
+    gap: 10px;
+}
+
+.modal-footer .btn {
+    margin: 0 5px;
+}
+
+/* Botão SIM (confirmar) - Ciano */
+.modal-footer .btn-success {
+    color: var(--bg-principal) !important;
+    background-color: var(--ciano-neon) !important;
+    border: 2px solid var(--ciano-neon) !important;
+    box-shadow: 0 0 8px rgba(0, 240, 255, 0.5);
+}
+
+.modal-footer .btn-success:hover {
+    color: var(--bg-principal) !important;
+    background-color: var(--ciano-neon) !important;
+    border-color: var(--ciano-neon) !important;
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.9);
+}
+
+/* Botão NÃO (cancelar) - Rosa */
+.modal-footer .btn-danger {
+    color: var(--branco) !important;
+    background-color: transparent !important;
+    border: 2px solid var(--rosa-neon) !important;
+    box-shadow: 0 0 8px rgba(255, 105, 180, 0.5);
+}
+
+.modal-footer .btn-danger:hover {
+    color: var(--branco) !important;
+    background-color: var(--rosa-neon) !important;
+    border-color: var(--rosa-neon) !important;
+    box-shadow: 0 0 20px rgba(255, 105, 180, 0.9);
+}
+
+/* =========================
+   LINKS E FOOTER
+   ========================= */
+
+a {
+    color: var(--ciano-neon);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--rosa-neon);
+    text-decoration: none;
+}
+
+footer {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-top: auto;
+    padding: 20px 0;
+    color: var(--cinza) !important;
+    background-color: var(--bg-principal) !important;
+    border-top: 3px solid var(--ciano-neon);
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.55rem;
+    box-shadow: 0 -4px 15px rgba(0, 240, 255, 0.9);
+}
+
+footer.container {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    border-radius: 0 !important;
+}
+
+/* =========================
+   RESPONSIVIDADE
+   ========================= */
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 75px !important;
+    }
+
+    main,
+    main.container {
+        padding-bottom: 50px;
+    }
+
+    .navbar-brand {
+        font-size: 0.9rem;
+    }
+
+    .navbar .nav-link {
+        font-size: 0.55rem;
+    }
+
+    .navbar .container-fluid {
+        padding-left: 15px;
+        padding-right: 25px;
+    }
+
+    h2 {
+        font-size: 0.85rem;
+    }
+
+    .table thead th {
+        font-size: 0.5rem;
+    }
+
+    .table tbody td {
+        font-size: 0.9rem;
+    }
+
+    .actions-wrap {
+        gap: 5px;
+    }
+
+    .actions-wrap .btn,
+    .btn-sm {
+        padding: 8px 12px !important;
+        font-size: 0.65rem !important;
+        min-height: 42px;
+    }
+
+    form {
+        padding: 15px;
+        margin-bottom: 50px;
+    }
+
+    .botoes-jogos,
+    .botoes-clientes {
+        margin-top: 10px;
+        text-align: left !important;
+    }
+
+    .botoes-jogos .btn,
+    .botoes-clientes .btn {
+        margin: 3px 3px 3px 0;
+    }
+
+    .dashboard-card {
+        min-height: 180px;
+    }
+
+    .dashboard-icon {
+        font-size: 3.5rem;
+    }
+
+    .dashboard-title {
+        font-size: 0.65rem;
+    }
+
+    .foto-tabela {
+        width: 50px;
+        height: 50px;
+    }
+
+    .img-jogo {
+        max-height: 300px;
+    }
+
+    .modal-content {
+        margin: 20px !important;
+    }
+
+    .modal-title {
+        font-size: 0.7rem;
+    }
+
+    .modal-body {
+        font-size: 0.9rem;
+    }
+
+    footer {
+        font-size: 0.45rem;
+    }
+}
